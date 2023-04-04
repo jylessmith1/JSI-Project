@@ -1,0 +1,48 @@
+/* Primary styling for mobile sized view
+Further stylings for larger screens added to media queries below */
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 95%;
+    background-color: lightblue;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    gap: 10px;
+    
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    gap: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    gap: 10px;
+}
+
+#title{
+    margin-bottom: 10px;
+}
+
+.title-space{
+    text-align: center;
+}
+
+@media only screen and (min-width: 460px) {
+    body{
+        background-color: lightgrey;
+    }
+}
