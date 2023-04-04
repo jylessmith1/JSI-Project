@@ -69,3 +69,16 @@ footer{
         background-color: lightgrey;
     }
 }
+.second-body {
+    display: flex;
+    justify-content: space-around;
+}
+.lastDivSection {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+button {
+    width: 60px;
+}
