@@ -83,33 +83,24 @@ welcomeBtn.addEventListener('click', (e) => {
             planBtn.addEventListener('click', (e) => {
                 mainArea.insertAdjacentHTML('beforeend', `
                     
-    <div class="lastDivSection"> 
-
-    </div>
-</section>
-
-
-<section class="bucketContainer">
-    <div class="plannedList"></div>
-        <ul></ul>
-
-    <div class="unplannedList"></div>
-        <ul></ul>
-</section>
-
-<div class="lastDivSection">
-    <form>
-        <div class="stepsContainer">
-            <label for="Steps">What steps can you take to make it happen?</label>
-            <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
-        </div>
-
-        <div class="timeFrameContainer">
-            <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
-            <textarea name="timeFrame" id="timeFrame" cols="30" rows="10"></textarea>
-        </div>
-    </form>
-</div>
+                <div class="lastDivSection">
+                <form>
+                    <div class="stepsContainer">
+                        <label for="Steps">What steps can you take to make it happen?</label>
+                        <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+                    </div>
+            
+                    <div class="timeFrameContainer">
+                        <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+                        <select name="timeFrame" id="timeFrame">
+                            <option value="1-3months">1-3 months</option>
+                            <option value=" 3-6months">3-6 months</option>
+                            <option value="6-12months">6-12 months</option>
+                            <option value="1+years">1+ years</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
                 `)
             });
 
