@@ -18,6 +18,7 @@
         </section>
 
         <article class="topHeadButtons">
+
                 <div><button type="submit">About Page</button>
                 </div>
                     <div>
@@ -43,54 +44,93 @@
         <section class="second-body">
             
             <section>
-                <button type="submit">Plan It</button>
+                <button id="planning"  type="submit">Plan-It! Now</button>
             </section>
             
             <div>
-                <button type="submit">Plan Later</button>
+                <button id="saving"  type="submit">Save for Later</button>
             </div>
             <div>
-                <button type="submit">Can-It</button>
+                <button id="trash" type="submit">Can-It!</button>
+
             </div>
-            
+        </article>
+    </header>
+    <section>
+        <main>
+            <h3>Primary functionality area</h3>
+            <article class="start-area">
+                <button id="welcome-button">Click to kick the bucket!</button>
+            </article>
+            <article class="main-area">
+
+            </article>
+
+        </main>
+    </section>
+
+
+    <section class="second-body">
+
+        <section>
+            <button type="submit">Plan It</button>
         </section>
-        
-        <div class="lastDivSection">
-            <form>
+
+        <div>
+            <button type="submit">Plan Later</button>
+        </div>
+        <div>
+            <button type="submit">Can-It</button>
+        </div>
+
+    </section>
+
+    <div class="lastDivSection">
+
+        <form>
+            <div class="stepsContainer">
                 <label for="Steps"> let create some steps to get started</label>
-                <input name="" id="Steps">
-                
-                <label for="Time Frame">Whats the time frame that you wants things to happen.</label>
-                <input name="" id="Time Frame">
-                
+                <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="timeFrameContainer">
+                <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+                <textarea name="timeFrame" id="timeFrame" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="planContainer">
                 <label for="Plan">Here is a plan for you</label>
-                <input name="" id="Plan">
-                <button type="submit">Submit</button>
-            </form>
-        </div> -->
-          <footer class="footerSection">
-            <!-- <h5>Designated footer area</h5> -->
-            <button type="submit">Resources</button>
-            <button type="submit">Contacts</button>
-            <button type="submit">F.A.Q</button>
-         </footer>   
-    </body>
+
+                <textarea name="Plan" id="Plan" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+
+    </div>
+    <footer class="footerSection">
+        <!-- <h5>Designated footer area</h5> -->
+        <!-- <a href="resources.html"> -->
+        <button type="submit">Resources</button>
+        <!-- </a> -->
+
+        <button type="submit">Contacts</button>
+        <button type="submit">F.A.Q</button>
+    </footer>
+</body>
+
     <script src="script.js" type="module"></script>
     <script src="API_KEY.js" type="module"></script>
 
-    
-    </html>
-    
-                    <!-- This section will be where our primary functionality will show up -->
-        
-        <!-- Done            *Button that starts the program* -->
-        <!-- Done            *How to use blerb that gives basic direction and idea of app to user -->
-                    <!-- *API output and decision to add to list or get next idea displays -->
-                    
-                    <!-- This area will reset and pull up the api generated idea and decisions upon user declining idea -->
-    
-        <!-- Close        If user wants to save idea, element to prompt user to plan out the idea or simply save will be displayed -->
-                    <!-- If user does a quick save, idea will be added to unplanned list within their bucket list 
-                        and page will generate the api idea element and decisions -->
-                    
-                    <!-- If user fills out planning ideas, it will be saved to planned list inside of the bucket list -->
+</html>
+
+<!-- This section will be where our primary functionality will show up -->
+
+<!-- Done            *Button that starts the program* -->
+<!-- Done            *How to use blerb that gives basic direction and idea of app to user -->
+<!-- *API output and decision to add to list or get next idea displays -->
+
+<!-- This area will reset and pull up the api generated idea and decisions upon user declining idea -->
+
+<!-- Close        If user wants to save idea, element to prompt user to plan out the idea or simply save will be displayed -->
+<!-- If user does a quick save, idea will be added to unplanned list within their bucket list 
