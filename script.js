@@ -1,5 +1,4 @@
-const API_KEY = `34PD50JLmCBqJzXURPwCTA==VrJyy8WwFNfUPkoe`
-
+import API_KEY from "./API_KEY.js";
 
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
