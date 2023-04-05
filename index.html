@@ -18,11 +18,41 @@
         </section>
 
         <article class="topHeadButtons">
-            <div><button type="submit">About Page</button>
+
+                <div><button type="submit">About Page</button>
+                </div>
+                    <div>
+                        <button type="submit">Log-In</button>
+                        <button type="submit">Sign-Up</button>
+                    </div>
+        </article>
+        </header>
+    <section>
+            <main>
+                <h3>Primary functionality area</h3>
+                <article class="start-area">
+                    <button id="welcome-button">Click to kick the bucket!</button>
+                </article>
+                <article class="main-area">
+
+                </article>
+                
+            </main>
+        </section>
+        
+        
+        <section class="second-body">
+            
+            <section>
+                <button id="planning"  type="submit">Plan-It! Now</button>
+            </section>
+            
+            <div>
+                <button id="saving"  type="submit">Save for Later</button>
             </div>
             <div>
-                <button type="submit">Log-In</button>
-                <button type="submit">Sign-Up</button>
+                <button id="trash" type="submit">Can-It!</button>
+
             </div>
         </article>
     </header>
@@ -70,6 +100,7 @@
 
             <div class="planContainer">
                 <label for="Plan">Here is a plan for you</label>
+
                 <textarea name="Plan" id="Plan" cols="30" rows="10"></textarea>
             </div>
             <button type="submit">Submit</button>
@@ -88,8 +119,8 @@
     </footer>
 </body>
 
-
-<script src="script.js"></script>
+    <script src="script.js" type="module"></script>
+    <script src="API_KEY.js" type="module"></script>
 
 </html>
 
@@ -103,6 +134,3 @@
 
 <!-- Close        If user wants to save idea, element to prompt user to plan out the idea or simply save will be displayed -->
 <!-- If user does a quick save, idea will be added to unplanned list within their bucket list 
-                        and page will generate the api idea element and decisions -->
-
-<!-- If user fills out planning ideas, it will be saved to planned list inside of the bucket list -->
