@@ -59,6 +59,47 @@ footer{
     text-align: center;
 }
 
+.main-area{
+    width: 95%;
+    height: 95%;
+}
+
+.api-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border:2px solid green;
+    height: 6rem;
+    padding:1%;
+    margin:1%;
+}
+
+.idea-field{
+    background-color: beige;
+    padding:1%;
+    width: 75%;
+    text-align: center;
+}
+.decision-buttons{
+    display: flex;
+    justify-content: space-around;
+    border: 2px dotted yellow;
+    width: 95%;
+    height: 2rem;
+    padding:1%;
+}
+
+#like-button{
+    width: 25%;
+    height: 100%;
+    padding:1%;
+}
+#dislike-button{
+    width: 25%;
+    height: 100%;
+}
+
 /* This class is used to hide elements as the app progresses */
 .hide{
     display: none;
@@ -79,6 +120,3 @@ footer{
     align-content: flex-start;
 }
 
-button {
-    width: 60px;
-}
