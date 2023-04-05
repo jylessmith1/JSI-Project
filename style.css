@@ -148,14 +148,8 @@ textarea {
     size-adjust: auto;
 }
 
-.stepsContainer{
-    
-}
-
-.timeFrameContainer{
-
-}
-
+.stepsContainer,
+.timeFrameContainer,
 .bucketContainer {
     display: flex;
     

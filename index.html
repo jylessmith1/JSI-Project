@@ -18,8 +18,12 @@
         </section>
         
         <article class="topHeadButtons">
-            
-            <div><button type="submit">About Page</button>
+
+            <a href="./externalResource/About.html">
+            <div><button type="submit">About Page
+            </a>
+
+            </button>
             </div>
             <div>
                 <button type="submit">Log-In</button>
@@ -39,29 +43,68 @@
             
         </main>
     </section>
-    <div class="lastDivSection"> 
+    
+    <section class="second-body">
+        
+        <section>
+            <button id="planning"  type="submit">Plan-It! Now</button>
+        </section>
+        
+        <div>
+            <button id="saving"  type="submit">Save for Later</button>
+        </div>
+        <div>
+            <button id="trash" type="submit">Can-It!</button>
+
+        </div>
+    </section>
+    
+    
+    <div class="lastDivSection">
+        <form>
+            <div class="stepsContainer">
+                <label for="Steps"> let create some steps to get started</label>
+                <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="timeFrameContainer">
+                <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+                <textarea name="timeFrame" id="timeFrame" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="planContainer">
+                <label for="Plan">Here is a plan for you</label>
+
+                <textarea name="Plan" id="Plan" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+
     </div>
 
-   <section class="bucketContainer">
-        <div class="plannedList"></div>
-            <ul>Take a cruise</ul>
-            <ul>Go mountain climbing</ul>
-            <ul>Ride in HotAir Balloon</ul>
-    
-        <div class="unplannedList"></div>
-            <ul>See the Aurora Borealis</ul>
-            <ul>Fly to Roam</ul>
-   </section>
-
     <footer class="footerSection">
-        <button type="submit">Resources</button>
-        <button type="submit">Contacts</button>
-        <button type="submit">F.A.Q</button>
-    </footer>
-</body>
 
+        <a href="./externalResource/Resources.html">
+        <button type="submit">Resources</button>
+    </a> 
+
+    <a href="./externalResource/Contacts.html">
+        <button type="submit">Contacts</button>
+        </a>
+      
+    <a href="./externalResource/FAQ.html">
+        <button type="submit">F.A.Q </button>
+        </a>
+       
+    </footer>
+    
     <script src="script.js" type="module"></script>
     <script src="API_KEY.js" type="module"></script>
+</body>
+
+    
+    
 
 </html>
 
