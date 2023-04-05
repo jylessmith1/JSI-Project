@@ -135,3 +135,14 @@ button {
     justify-content: space-between;
 }
 
+textarea {
+    outline-style: hidden;
+    size-adjust: auto;
+}
+
+.stepsContainer, 
+.timeFrameContainer,
+ .planContainer {
+width: auto;
+padding: 5px;
+}
