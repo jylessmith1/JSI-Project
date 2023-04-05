@@ -151,3 +151,8 @@ textarea {
 width: auto;
 padding: 5px;
 }
+
+.bucketContainer {
+    display: flex;
+    
+}
