@@ -1,3 +1,5 @@
+import API_KEY from "./API_KEY.js";
+
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
 
@@ -22,7 +24,9 @@ welcomeBtn.addEventListener('click', (e) => {
     </article>`);
     
     let startBtn = document.querySelector('#start-button');
-    startBtn.addEventListener('click', () => {
+
+    startBtn.addEventListener('click', (e) => {
+        e.preventDefault();
 
         mainArea.innerHTML = '';
         mainArea.insertAdjacentHTML('afterbegin', 
@@ -33,10 +37,31 @@ welcomeBtn.addEventListener('click', (e) => {
             <button id="like-button">User likes</button>
         </nav>
         </div>`) 
+        
+        const getNewIdea = () => {
+            fetch(`https://api.api-ninjas.com/v1/bucketlist`, {
+                method: 'GET',
+                headers: {
+                    'X-Api-Key': `${API_KEY}`,
+                },
+            }).then(r => r.json())
+            .then(data => ideaField.innerText = `${data.item}`)
+        }
+
+        let ideaField = document.querySelector('.idea-field');
+        getNewIdea();
+        
+        let userDecline = document.querySelector('#dislike-button');
+        userDecline.addEventListener('click', (e) => {
+            e.preventDefault();
+            getNewIdea();
+        })
     });
 })
+
 //adds eventlintner to the second body planning button!
-planning.addEventListener('click', (x) => {
+planning.addEventListener('click',(x) => {
     x.preventDefault();
     console.log('Planning')
     secondBody.classList.toggle('hide')
+});
