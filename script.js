@@ -1,6 +1,8 @@
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
-let welcomeArea = document.querySelector('.main-area');
+let mainArea = document.querySelector('.main-area');
+
+
 
 
 
@@ -9,7 +11,7 @@ welcomeBtn.addEventListener('click', (e) => {
     console.log('Clicked')
     startArea.classList.toggle('hide')
     
-    welcomeArea.insertAdjacentHTML('afterbegin', 
+    mainArea.insertAdjacentHTML('afterbegin', 
     `<article class="welcome-content">
     <h>Welcome to Kick-it!</h>
 
@@ -20,6 +22,14 @@ welcomeBtn.addEventListener('click', (e) => {
     
     let startBtn = document.querySelector('#start-button');
     startBtn.addEventListener('click', () => {
-        welcomeArea.innerHTML = '';
+        mainArea.innerHTML = '';
+        mainArea.insertAdjacentHTML('afterbegin', 
+        `<div class="api-div">
+        <h class="idea-field">API output area</h>
+        <nav class="decision-buttons">
+            <button id="dislike-button">User declines</button>
+            <button id="like-button">User likes</button>
+        </nav>
+        </div>`) 
     });
 })
