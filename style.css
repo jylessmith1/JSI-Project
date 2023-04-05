@@ -105,6 +105,11 @@ footer{
     width: auto;
     height: 100%;
 }
+.bucket-buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 
 /* This class is used to hide elements as the app progresses */
 .hide{
@@ -143,13 +148,12 @@ textarea {
     size-adjust: auto;
 }
 
-.stepsContainer{}
+.stepsContainer{
+    
+}
 
-.timeFrameContainer{}
+.timeFrameContainer{
 
- .planContainer {
-width: auto;
-padding: 5px;
 }
 
 .bucketContainer {
