@@ -3,6 +3,7 @@ let welcomeBtn = document.querySelector('#welcome-button');
 
 let mainArea = document.querySelector('.main-area');
 
+let secondBody = document.querySelector('second-body');
 
 
 welcomeBtn.addEventListener('click', (e) => {
@@ -34,3 +35,8 @@ welcomeBtn.addEventListener('click', (e) => {
         </div>`) 
     });
 })
+//adds eventlintner to the second body planning button!
+planning.addEventListener('click', (x) => {
+    x.preventDefault();
+    console.log('Planning')
+    secondBody.classList.toggle('hide')
