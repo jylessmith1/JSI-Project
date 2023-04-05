@@ -59,6 +59,7 @@ footer{
     text-align: center;
 }
 
+
 .main-area{
     width: 95%;
     height: 95%;
@@ -118,5 +119,19 @@ footer{
     display: flex;
     flex-direction: column;
     align-content: flex-start;
+}
+
+button {
+    width: auto;
+}
+.footerSection {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+   justify-content: space-around;
+}
+.topHeadButtons {
+    display: flex;
+    justify-content: space-between;
 }
 

@@ -2,9 +2,8 @@ import API_KEY from "./API_KEY.js";
 
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
+
 let mainArea = document.querySelector('.main-area');
-
-
 
 
 
@@ -14,6 +13,7 @@ welcomeBtn.addEventListener('click', (e) => {
     startArea.classList.toggle('hide')
     
     mainArea.insertAdjacentHTML('afterbegin', 
+    
     `<article class="welcome-content">
     <h>Welcome to Kick-it!</h>
 
@@ -24,6 +24,7 @@ welcomeBtn.addEventListener('click', (e) => {
     
     let startBtn = document.querySelector('#start-button');
     startBtn.addEventListener('click', () => {
+
         mainArea.innerHTML = '';
         mainArea.insertAdjacentHTML('afterbegin', 
         `<div class="api-div">
