@@ -56,6 +56,12 @@ welcomeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             getNewIdea();
         })
+
+        let userAdd = document.querySelector('#like-button');
+        userAdd.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+        })
     });
 })
 
