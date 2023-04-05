@@ -3,6 +3,7 @@ import API_KEY from "./API_KEY.js";
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
 let mainArea = document.querySelector('.main-area');
+let planArea = document.querySelector('.plan-area')
 
 
 const suggestionHTML = `<div class="api-div">
@@ -76,20 +77,19 @@ welcomeBtn.addEventListener('click', (e) => {
             canItBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 decisionBtnArea.innerHTML = '';
+                planArea.innerHTML = '';
                 getNewIdea();
                 decisionBtnArea.append(userDecline, userAdd);
             });
 
             planBtn.addEventListener('click', (e) => {
-                mainArea.insertAdjacentHTML('beforeend', `
-                    
-                <div class="lastDivSection">
-                <form>
+                e.preventDefault();
+                planArea.insertAdjacentHTML('afterbegin', `
+                <section class='plan-container'>
                     <div class="stepsContainer">
                         <label for="Steps">What steps can you take to make it happen?</label>
                         <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
                     </div>
-            
                     <div class="timeFrameContainer">
                         <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
                         <select name="timeFrame" id="timeFrame">
@@ -99,8 +99,7 @@ welcomeBtn.addEventListener('click', (e) => {
                             <option value="1+years">1+ years</option>
                         </select>
                     </div>
-                </form>
-            </div>
+                </section>
                 `)
             });
 
