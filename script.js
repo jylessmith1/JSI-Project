@@ -63,17 +63,11 @@ welcomeBtn.addEventListener('click', (e) => {
             decisionBtnArea.innerHTML = '';
             decisionBtnArea.insertAdjacentHTML('afterbegin', 
             `
-            <section id="plan-options">
-            <div>
+            <article class='bucket-buttons'>
                 <button id="plan-it">Plan-It! Now</button>
-            </div>
-            <div>
                 <button id="save-it">Save for Later</button>
-            </div>
-            <div>
-                <button id="can-it">Can-It!</button>
-            </div>
-            </section>
+            <button id="can-it">Can-It!</button>
+            </article>
             `)
             let planBtn = document.querySelector('#plan-it');
             let quickSaveBtn = document.querySelector('#save-it');
@@ -84,16 +78,45 @@ welcomeBtn.addEventListener('click', (e) => {
                 decisionBtnArea.innerHTML = '';
                 getNewIdea();
                 decisionBtnArea.append(userDecline, userAdd);
+            });
+
+            planBtn.addEventListener('click', (e) => {
+                mainArea.insertAdjacentHTML('beforeend', `
+                    
+    <div class="lastDivSection"> 
+
+    </div>
+</section>
+
+
+<section class="bucketContainer">
+    <div class="plannedList"></div>
+        <ul></ul>
+
+    <div class="unplannedList"></div>
+        <ul></ul>
+</section>
+
+<div class="lastDivSection">
+    <form>
+        <div class="stepsContainer">
+            <label for="Steps">What steps can you take to make it happen?</label>
+            <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="timeFrameContainer">
+            <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+            <textarea name="timeFrame" id="timeFrame" cols="30" rows="10"></textarea>
+        </div>
+    </form>
+</div>
+                `)
+            });
+
+            quickSaveBtn.addEventListener('click', (e) => {
+
             })
 
         })
     })
 })
-
-
-//adds eventlintner to the second body planning button!
-// planning.addEventListener('click',(x) => {
-//     x.preventDefault();
-//     console.log('Planning')
-//     secondBody.classList.toggle('hide')
-// });
