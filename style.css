@@ -43,7 +43,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     gap: 10px;
     font-family: 'Indie Flower', cursive;
     font-size: larger;
@@ -57,7 +57,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     gap: 10px;
     background-image: url('site-pics/istockphoto-bucket list 1.jpeg');
     background-position: center;
@@ -72,8 +72,12 @@ main{
 footer{
     display: flex;
     justify-content: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     gap: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 1.5rem;
 }
 
 #title{
@@ -163,9 +167,6 @@ footer{
     align-content: flex-start;
 }
 
-
-
-
 button {
     width: auto;
 }
@@ -174,6 +175,8 @@ button {
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-around;
+   
+  
 }
 .topHeadButtons {
     display: flex;
@@ -199,7 +202,7 @@ textarea {
 
 
 .bucketContainer {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     gap: 10px;
     display: flex;
     flex-direction: row;
@@ -213,3 +216,12 @@ textarea {
     width: 50%;
     height: auto;
 }
+
+
+
+
+
+
+
+
+
