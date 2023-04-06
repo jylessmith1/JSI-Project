@@ -4,7 +4,11 @@ let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
 let mainArea = document.querySelector('.main-area');
 let planArea = document.querySelector('.plan-area')
+
 let plannedItems = [];
+
+let unplannedIdeas = [];
+
 
 
 const suggestionHTML = `<div class="api-div">
@@ -75,18 +79,34 @@ welcomeBtn.addEventListener('click', (e) => {
             let quickSaveBtn = document.querySelector('#save-it');
             let canItBtn = document.querySelector('#can-it');
 
+
+
+            let planAreaCreated = false
+        
+
             canItBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 decisionBtnArea.innerHTML = '';
                 planArea.innerHTML = '';
                 getNewIdea();
                 decisionBtnArea.append(userDecline, userAdd);
+                planAreaCreated = false;
             });
+            
+            quickSaveBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let ideaField = document.querySelector('.idea-field');
+                let idea = ideaField.innerHTML
+                unplannedIdeas.push(idea);
+                getNewIdea();
+            });
+
 
             planBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                planArea.insertAdjacentHTML('afterbegin', `
+                if (planAreaCreated === false) {planArea.insertAdjacentHTML('afterbegin', `
                 <section class='plan-container'>
+
                 <div class="stepsContainer">
                     <label for="Steps">What steps can you take to make it happen?</label>
                     <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
@@ -123,6 +143,7 @@ welcomeBtn.addEventListener('click', (e) => {
                     plannedItems.push(plannedIdea);
                     console.log(plannedItems)
                 })
+
             });
 
             quickSaveBtn.addEventListener('click', (e) => {
