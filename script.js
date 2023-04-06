@@ -11,8 +11,30 @@ let plannedArea = document.querySelector('.plannedList');
 let unplannedIdeas = [];
 let unplannedArea = document.querySelector('.unplannedList');
 
-let addPlan = () => {
+
+// This function takes a clicked list item and generates a form field to plan that idea, then moves it from the unplanned ideas into the planned ideas
+let addPlan = (element) => {
+    planArea.innerHTML = '';
     planArea.insertAdjacentHTML('afterbegin', formHTML)
+    let submitPlanButton = document.querySelector('#submitPlanButton')
+    let ideaField = document.querySelector('.idea-field')
+    ideaField.innerText = element.innerText;
+
+    submitPlanButton.addEventListener('click', (e) => {
+    let steps = document.querySelector('#Steps')
+    let timeFrame = document.querySelector('#timeFrame')
+    let plannedIdea = {
+        idea: element.innerText,
+        steps: steps.value,
+        timeFrame: timeFrame.value,
+    }
+    unplannedIdeas.splice(unplannedIdeas.indexOf(element.innerText));
+    buildUnplannedList(unplannedIdeas);
+    plannedItems.push(plannedIdea);
+    buildPlannedList(plannedItems);
+    console.log(plannedItems)
+    planArea.innerHTML = 'Idea Saved!';
+})
 };
 
 
@@ -21,8 +43,9 @@ let buildUnplannedList = (array) => {
     array.forEach(idea => {
         let listItem = document.createElement('li');
         listItem.addEventListener('click', (e) => {
+            let target = listItem
             e.preventDefault();
-            addPlan()
+            addPlan(target)
         });
         listItem.innerText = idea;
         console.log(listItem)
@@ -177,7 +200,7 @@ welcomeBtn.addEventListener('click', (e) => {
                     getNewIdea();
                     planAreaCreated = false
                 })
-
+                    console.log(plannedItems)
             }});
 
             quickSaveBtn.addEventListener('click', (e) => {
