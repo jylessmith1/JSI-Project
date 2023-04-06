@@ -12,7 +12,7 @@ let unplannedIdeas = [];
 
 
 const suggestionHTML = `<div class="api-div">
-<h class="idea-field">API output area</h>
+<h class="idea-field">Loading something brilliant...</h>
 <nav class="decision-buttons">
     <button id="like-button">User likes</button>
     <button id="dislike-button">User declines</button>
@@ -126,9 +126,8 @@ welcomeBtn.addEventListener('click', (e) => {
                 </div>
             </section>
                 `)
-
                 let submitPlanButton = document.querySelector('#submitPlanButton')
-
+                planAreaCreated = true
                 submitPlanButton.addEventListener('click', (e) => {
                     e.preventDefault();
 
@@ -142,9 +141,12 @@ welcomeBtn.addEventListener('click', (e) => {
                     }
                     plannedItems.push(plannedIdea);
                     console.log(plannedItems)
+                    planArea.innerHTML = 'Idea saved!'
+                    getNewIdea();
+                    planAreaCreated = false
                 })
 
-            });
+            }});
 
             quickSaveBtn.addEventListener('click', (e) => {
 
