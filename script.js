@@ -6,10 +6,30 @@ let mainArea = document.querySelector('.main-area');
 let planArea = document.querySelector('.plan-area')
 
 let plannedItems = [];
+let plannedArea = document.querySelector('.plannedList');
 
 let unplannedIdeas = [];
+let unplannedArea = document.querySelector('.unplannedList');
 
 
+let buildUnplannedList = (array) => {
+    unplannedArea.innerHTML='Unplanned Ideas!';
+    array.forEach(idea => {
+        let listItem = document.createElement('li');
+        listItem.innerText = idea;
+        console.log(listItem)
+        unplannedArea.append(listItem);
+    });
+} 
+
+let buildPlannedList = (array) => {
+    plannedArea.innerHTML = 'Planned Ideas!';
+    array.forEach(element => {
+        let listItem = document.createElement('li');
+        listItem.innerText = element.idea;
+        plannedArea.append(listItem);
+    })
+}
 
 const suggestionHTML = `<div class="api-div">
 <h class="idea-field">Loading something brilliant...</h>
@@ -19,6 +39,7 @@ const suggestionHTML = `<div class="api-div">
 
 </nav>
 </div>`
+
 
 welcomeBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -98,6 +119,7 @@ welcomeBtn.addEventListener('click', (e) => {
                 let ideaField = document.querySelector('.idea-field');
                 let idea = ideaField.innerHTML
                 unplannedIdeas.push(idea);
+                buildUnplannedList(unplannedIdeas);
                 getNewIdea();
             });
 
@@ -140,7 +162,8 @@ welcomeBtn.addEventListener('click', (e) => {
                         timeFrame: timeFrame.value,
                     }
                     plannedItems.push(plannedIdea);
-                    console.log(plannedItems)
+        // Area to update planned list
+                    buildPlannedList(plannedItems);
                     planArea.innerHTML = 'Idea saved!'
                     getNewIdea();
                     planAreaCreated = false
