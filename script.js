@@ -4,6 +4,7 @@ let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
 let mainArea = document.querySelector('.main-area');
 let planArea = document.querySelector('.plan-area')
+let unplannedIdeas = [];
 
 
 const suggestionHTML = `<div class="api-div">
@@ -81,6 +82,14 @@ welcomeBtn.addEventListener('click', (e) => {
                 getNewIdea();
                 decisionBtnArea.append(userDecline, userAdd);
             });
+            
+            quickSaveBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                let ideaField = document.querySelector('.idea-field');
+                let idea = ideaField.innerHTML
+                unplannedIdeas.push(idea);
+                getNewIdea();
+            });
 
             planBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -110,3 +119,9 @@ welcomeBtn.addEventListener('click', (e) => {
         })
     })
 })
+
+
+
+
+
+
