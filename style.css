@@ -148,10 +148,12 @@ textarea {
     size-adjust: auto;
 }
 
+
 .plan-area{
     width: 100%;
     border: 1px solid blue;
 }
+
 
 .bucketContainer {
     border: 2px solid black;
