@@ -1,3 +1,8 @@
+@media only screen and (min-width: 460px) {
+    body{
+        background-color: lightgrey;
+    }
+}
 /* Primary styling for mobile sized view
 Further stylings for larger screens added to media queries below */
 
@@ -100,17 +105,17 @@ footer{
     width: auto;
     height: 100%;
 }
+.bucket-buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 
 /* This class is used to hide elements as the app progresses */
 .hide{
     display: none;
 }
 
-@media only screen and (min-width: 460px) {
-    body{
-        background-color: lightgrey;
-    }
-}
 .second-body {
     display: flex;
     justify-content: space-around;
@@ -121,6 +126,9 @@ footer{
     align-content: flex-start;
 }
 
+
+
+
 button {
     width: auto;
 }
@@ -128,7 +136,7 @@ button {
     display: flex;
     flex-direction: row;
     align-content: flex-start;
-   justify-content: space-around;
+    justify-content: space-around;
 }
 .topHeadButtons {
     display: flex;
@@ -140,19 +148,31 @@ textarea {
     size-adjust: auto;
 }
 
-<<<<<<< Updated upstream
-.stepsContainer, 
-.timeFrameContainer,
- .planContainer {
-width: auto;
-padding: 5px;
-}
-=======
-
 
 .bucketContainer{}
 .stepsContainer{}
 .timeFrameContainer{
     display: flex;
     }
->>>>>>> Stashed changes
+
+.plan-area{
+    width: 100%;
+    border: 1px solid blue;
+}
+
+
+.bucketContainer {
+    border: 2px solid black;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+};
+.plannedList{
+    width: 50%;
+    height: auto;
+}
+.unplannedList{
+    width: 50%;
+    height: auto;
+}

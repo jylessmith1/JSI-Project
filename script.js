@@ -2,10 +2,17 @@ import API_KEY from "./API_KEY.js";
 
 let startArea = document.querySelector('.start-area');
 let welcomeBtn = document.querySelector('#welcome-button');
-
 let mainArea = document.querySelector('.main-area');
+let planArea = document.querySelector('.plan-area')
 
-let secondBody = document.querySelector('second-body');
+
+const suggestionHTML = `<div class="api-div">
+<h class="idea-field">API output area</h>
+<nav class="decision-buttons">
+    <button id="dislike-button">User declines</button>
+    <button id="like-button">User likes</button>
+</nav>
+</div>`
 
 
 welcomeBtn.addEventListener('click', (e) => {
@@ -14,7 +21,6 @@ welcomeBtn.addEventListener('click', (e) => {
     startArea.classList.toggle('hide')
     
     mainArea.insertAdjacentHTML('afterbegin', 
-    
     `<article class="welcome-content">
     <h>Welcome to Kick-it!</h>
 
@@ -29,16 +35,12 @@ welcomeBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
         mainArea.innerHTML = '';
-        mainArea.insertAdjacentHTML('afterbegin', 
-        `<div class="api-div">
-        <h class="idea-field">API output area</h>
-        <nav class="decision-buttons">
-            <button id="dislike-button">User declines</button>
-            <button id="like-button">User likes</button>
-        </nav>
-        </div>`) 
+        mainArea.insertAdjacentHTML('afterbegin', suggestionHTML) 
+        
+        let decisionBtnArea = document.querySelector('.decision-buttons');
         
         const getNewIdea = () => {
+            let ideaField = document.querySelector('.idea-field');
             fetch(`https://api.api-ninjas.com/v1/bucketlist`, {
                 method: 'GET',
                 headers: {
@@ -48,7 +50,6 @@ welcomeBtn.addEventListener('click', (e) => {
             .then(data => ideaField.innerText = `${data.item}`)
         }
 
-        let ideaField = document.querySelector('.idea-field');
         getNewIdea();
         
         let userDecline = document.querySelector('#dislike-button');
@@ -60,14 +61,52 @@ welcomeBtn.addEventListener('click', (e) => {
         let userAdd = document.querySelector('#like-button');
         userAdd.addEventListener('click', (e) => {
             e.preventDefault();
-            
-        })
-    });
-})
+            decisionBtnArea.innerHTML = '';
+            decisionBtnArea.insertAdjacentHTML('afterbegin', 
+            `
+            <article class='bucket-buttons'>
+                <button id="plan-it">Plan-It! Now</button>
+                <button id="save-it">Save for Later</button>
+            <button id="can-it">Can-It!</button>
+            </article>
+            `)
+            let planBtn = document.querySelector('#plan-it');
+            let quickSaveBtn = document.querySelector('#save-it');
+            let canItBtn = document.querySelector('#can-it');
+        
+            canItBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                decisionBtnArea.innerHTML = '';
+                planArea.innerHTML = '';
+                getNewIdea();
+                decisionBtnArea.append(userDecline, userAdd);
+            });
 
-//adds eventlintner to the second body planning button!
-planning.addEventListener('click',(x) => {
-    x.preventDefault();
-    console.log('Planning')
-    secondBody.classList.toggle('hide')
-});
+            planBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                planArea.insertAdjacentHTML('afterbegin', `
+                <section class='plan-container'>
+                    <div class="stepsContainer">
+                        <label for="Steps">What steps can you take to make it happen?</label>
+                        <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="timeFrameContainer">
+                        <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+                        <select name="timeFrame" id="timeFrame">
+                            <option value="1-3months">1-3 months</option>
+                            <option value=" 3-6months">3-6 months</option>
+                            <option value="6-12months">6-12 months</option>
+                            <option value="1+years">1+ years</option>
+                        </select>
+                    </div>
+                </section>
+                `)
+            });
+
+            quickSaveBtn.addEventListener('click', (e) => {
+
+            })
+
+        })
+    })
+})
