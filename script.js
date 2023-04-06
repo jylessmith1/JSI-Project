@@ -12,34 +12,87 @@ let unplannedIdeas = [];
 let unplannedArea = document.querySelector('.unplannedList');
 
 
+// This function takes a clicked list item and generates a form field to plan that idea, then moves it from the unplanned ideas into the planned ideas
+let addPlan = (element) => {
+    planArea.innerHTML = '';
+    planArea.insertAdjacentHTML('afterbegin', formHTML)
+    let submitPlanButton = document.querySelector('#submitPlanButton')
+    let ideaField = document.querySelector('.idea-field')
+    ideaField.innerText = element.innerText;
+
+    submitPlanButton.addEventListener('click', (e) => {
+    let steps = document.querySelector('#Steps')
+    let timeFrame = document.querySelector('#timeFrame')
+    let plannedIdea = {
+        idea: element.innerText,
+        steps: steps.value,
+        timeFrame: timeFrame.value,
+    }
+    unplannedIdeas.splice(unplannedIdeas.indexOf(element.innerText));
+    buildUnplannedList(unplannedIdeas);
+    plannedItems.push(plannedIdea);
+    buildPlannedList(plannedItems);
+    console.log(plannedItems)
+    planArea.innerHTML = 'Idea Saved!';
+})
+};
+
+
 let buildUnplannedList = (array) => {
     unplannedArea.innerHTML='Unplanned Ideas!';
     array.forEach(idea => {
         let listItem = document.createElement('li');
+        listItem.addEventListener('click', (e) => {
+            let target = listItem
+            e.preventDefault();
+            addPlan(target)
+        });
         listItem.innerText = idea;
         console.log(listItem)
         unplannedArea.append(listItem);
     });
-} 
+};
 
 let buildPlannedList = (array) => {
     plannedArea.innerHTML = 'Planned Ideas!';
     array.forEach(element => {
         let listItem = document.createElement('li');
+        listItem.setAttribute('onclick', '')
         listItem.innerText = element.idea;
         plannedArea.append(listItem);
     })
-}
+};
 
-const suggestionHTML = `<div class="api-div">
-<h class="idea-field">Loading something brilliant...</h>
-<nav class="decision-buttons">
-    <button id="like-button">User likes</button>
-    <button id="dislike-button">User declines</button>
-
-</nav>
+const suggestionHTML = `
+<div class="api-div">
+    <h class="idea-field">Loading something brilliant...</h>
+    <nav class="decision-buttons">
+        <button id="like-button">User likes</button>
+        <button id="dislike-button">User declines</button>
+    </nav>
 </div>`
 
+const formHTML = `
+<section class='plan-container'>
+
+<div class="stepsContainer">
+    <label for="Steps">What steps can you take to make it happen?</label>
+    <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+</div>
+<div class="timeFrameContainer">
+    <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+
+    <select name="timeFrame" id="timeFrame">
+        <option value="1-3months">1-3 months</option>
+        <option value=" 3-6months">3-6 months</option>
+        <option value="6-12months">6-12 months</option>
+        <option value="1+years">1+ years</option>
+    </select>
+</div>
+<div class="">
+   <button type="submit" id="submitPlanButton">Submit Plan</button>
+</div>
+</section>`
 
 welcomeBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -126,28 +179,7 @@ welcomeBtn.addEventListener('click', (e) => {
 
             planBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (planAreaCreated === false) {planArea.insertAdjacentHTML('afterbegin', `
-                <section class='plan-container'>
-
-                <div class="stepsContainer">
-                    <label for="Steps">What steps can you take to make it happen?</label>
-                    <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
-                </div>
-                <div class="timeFrameContainer">
-                    <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
-
-                    <select name="timeFrame" id="timeFrame">
-                        <option value="1-3months">1-3 months</option>
-                        <option value=" 3-6months">3-6 months</option>
-                        <option value="6-12months">6-12 months</option>
-                        <option value="1+years">1+ years</option>
-                    </select>
-                </div>
-                <div class="">
-                   <button type="submit" id="submitPlanButton">Submit Plan</button>
-                </div>
-            </section>
-                `)
+                if (planAreaCreated === false) {planArea.insertAdjacentHTML('afterbegin', formHTML)
                 let submitPlanButton = document.querySelector('#submitPlanButton')
                 planAreaCreated = true
                 submitPlanButton.addEventListener('click', (e) => {
@@ -168,7 +200,7 @@ welcomeBtn.addEventListener('click', (e) => {
                     getNewIdea();
                     planAreaCreated = false
                 })
-
+                    console.log(plannedItems)
             }});
 
             quickSaveBtn.addEventListener('click', (e) => {
