@@ -148,9 +148,25 @@ textarea {
     size-adjust: auto;
 }
 
-.stepsContainer,
-.timeFrameContainer,
+
+.plan-area{
+    width: 100%;
+    border: 1px solid blue;
+}
+
+
 .bucketContainer {
+    border: 2px solid black;
+    gap: 10px;
     display: flex;
-    
+    flex-direction: row;
+    height: auto;
+};
+.plannedList{
+    width: 50%;
+    height: auto;
+}
+.unplannedList{
+    width: 50%;
+    height: auto;
 }
