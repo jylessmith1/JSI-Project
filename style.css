@@ -12,8 +12,32 @@ body{
     justify-content: center;
     gap: 15px;
     width: 95%;
-    background-color: lightblue;
+    background-color: rgb(211, 169, 14);
+    background: linear-gradient(#FBB333, #FFD014,#F19600 );
 }
+
+
+.background-image {
+    background-image: url('site-pics/istockphoto-bucket list 1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; 
+  }
+  
+  .text-on-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; /* Change this value as per your requirement */
+    text-align: center; /* Change this value as per your requirement */
+    font-size: 2rem; /* Change this value as per your requirement */
+  }
+  
 
 header{
     display: flex;
@@ -21,6 +45,11 @@ header{
     justify-content: center;
     border: 2px solid black;
     gap: 10px;
+    font-family: 'Indie Flower', cursive;
+    font-size: larger;
+    animation-timing-function: steps(7s);
+
+        
     
 }
 
@@ -30,6 +59,14 @@ main{
     align-items: center;
     border: 2px solid black;
     gap: 10px;
+    background-image: url('site-pics/istockphoto-bucket list 1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; 
 }
 
 footer{
