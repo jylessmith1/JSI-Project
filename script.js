@@ -74,6 +74,7 @@ welcomeBtn.addEventListener('click', (e) => {
             let planBtn = document.querySelector('#plan-it');
             let quickSaveBtn = document.querySelector('#save-it');
             let canItBtn = document.querySelector('#can-it');
+            let planAreaCreated = false
         
             canItBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -81,6 +82,7 @@ welcomeBtn.addEventListener('click', (e) => {
                 planArea.innerHTML = '';
                 getNewIdea();
                 decisionBtnArea.append(userDecline, userAdd);
+                planAreaCreated = false;
             });
             
             quickSaveBtn.addEventListener('click', (e) => {
@@ -91,9 +93,10 @@ welcomeBtn.addEventListener('click', (e) => {
                 getNewIdea();
             });
 
+
             planBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                planArea.insertAdjacentHTML('afterbegin', `
+                if (planAreaCreated === false) {planArea.insertAdjacentHTML('afterbegin', `
                 <section class='plan-container'>
                     <div class="stepsContainer">
                         <label for="Steps">What steps can you take to make it happen?</label>
@@ -109,7 +112,8 @@ welcomeBtn.addEventListener('click', (e) => {
                         </select>
                     </div>
                 </section>
-                `)
+                `)};
+                planCreated = true;
             });
 
             quickSaveBtn.addEventListener('click', (e) => {
