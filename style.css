@@ -140,9 +140,19 @@ textarea {
     size-adjust: auto;
 }
 
+<<<<<<< Updated upstream
 .stepsContainer, 
 .timeFrameContainer,
  .planContainer {
 width: auto;
 padding: 5px;
 }
+=======
+
+
+.bucketContainer{}
+.stepsContainer{}
+.timeFrameContainer{
+    display: flex;
+    }
+>>>>>>> Stashed changes
