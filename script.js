@@ -67,8 +67,8 @@ const suggestionHTML = `
 <div class="api-div">
     <h class="idea-field">Loading something brilliant...</h>
     <nav class="decision-buttons">
-    <button id="dislike-button">Not for me</button>
-        <button id="like-button">I can dig it</button>
+    <button id="dislike-button">Nah, can't dit it</button>
+        <button id="like-button">Oh yeah, I like it</button>
     </nav>
 </div>`
 
@@ -101,11 +101,12 @@ welcomeBtn.addEventListener('click', (e) => {
 
     mainArea.insertAdjacentHTML('afterbegin',
         `<article class="welcome-content">
-    <h>Welcome to Kick-it!</h>
+    <h>Welcome to Buck-iT!</h>
 
     <p>Here's how to use your new Buck-It! list planner:</p>
     <p>This is an easy way to help you come up with great ideas for fun and exciting things to before you...ya know....kick the bucket! <br> Buck-iT will give you an idea, if you don't like it, "Can-it"!. If you love it, "Plan-it"! On the fence? "Save-it" and plan later. <br> Jot down ideas and plan out your next fun idea. Buck-iT, before you "kick it"!</p>
     <button id="start-button">Got it, let's get started</button>
+
     </article>`);
 
     let startBtn = document.querySelector('#start-button');
