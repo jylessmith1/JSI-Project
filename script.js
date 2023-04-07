@@ -21,25 +21,25 @@ let addPlan = (element) => {
     ideaField.innerText = element.innerText;
 
     submitPlanButton.addEventListener('click', (e) => {
-    let steps = document.querySelector('#Steps')
-    let timeFrame = document.querySelector('#timeFrame')
-    let plannedIdea = {
-        idea: element.innerText,
-        steps: steps.value,
-        timeFrame: timeFrame.value,
-    }
-    unplannedIdeas.splice(unplannedIdeas.indexOf(element.innerText));
-    buildUnplannedList(unplannedIdeas);
-    plannedItems.push(plannedIdea);
-    buildPlannedList(plannedItems);
-    console.log(plannedItems)
-    planArea.innerHTML = 'Idea Saved!';
-})
+        let steps = document.querySelector('#Steps')
+        let timeFrame = document.querySelector('#timeFrame')
+        let plannedIdea = {
+            idea: element.innerText,
+            steps: steps.value,
+            timeFrame: timeFrame.value,
+        }
+        unplannedIdeas.splice(unplannedIdeas.indexOf(element.innerText));
+        buildUnplannedList(unplannedIdeas);
+        plannedItems.push(plannedIdea);
+        buildPlannedList(plannedItems);
+        console.log(plannedItems)
+        planArea.innerHTML = 'Idea Saved!';
+    })
 };
 
 
 let buildUnplannedList = (array) => {
-    unplannedArea.innerHTML='Unplanned Ideas!';
+    unplannedArea.innerHTML = 'Unplanned Ideas!';
     array.forEach(idea => {
         let listItem = document.createElement('li');
         listItem.addEventListener('click', (e) => {
@@ -104,7 +104,7 @@ welcomeBtn.addEventListener('click', (e) => {
     <h>Welcome to Kick-it!</h>
 
     <p>Here's how to use your new Buck-It! list planner:</p>
-    <p>This is an easy way to help you come up with great ideas for fun and exciting things to before you...ya know....kick the bucket!  Click on the ____button to generate a idea.  If your don't like the idea, you can "Can-it!", if you love the idea you can "Plan-it!".  This app will aid you in your planning process, from setting your time frame, budgeting, list which friend to bring alone (or which ones to leave behide!)</p>
+    <p>This is an easy way to help you come up with great ideas for fun & exciting things to before you...ya know....kick the bucket!  Click on the “Click the Buck-iT!” button to generate an idea.  If you don’t like the idea, select “No, I don’t like this idea!“, and a new one will generate. If you like the idea, select “Oh yeah, I like this idea!“.  This app will aid you in your planning process, from setting your time frames, budgeting, listing which friend(s) to bring along (or which ones(s) to leave behind!)</p>
     <button id="start-button">Got it, let's get started</button>
     </article>`);
 
@@ -156,7 +156,7 @@ welcomeBtn.addEventListener('click', (e) => {
 
 
             let planAreaCreated = false
-        
+
 
             canItBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -166,7 +166,7 @@ welcomeBtn.addEventListener('click', (e) => {
                 decisionBtnArea.append(userDecline, userAdd);
                 planAreaCreated = false;
             });
-            
+
             quickSaveBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 let ideaField = document.querySelector('.idea-field');
@@ -179,29 +179,31 @@ welcomeBtn.addEventListener('click', (e) => {
 
             planBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (planAreaCreated === false) {planArea.insertAdjacentHTML('afterbegin', formHTML)
-                let submitPlanButton = document.querySelector('#submitPlanButton')
-                planAreaCreated = true
-                submitPlanButton.addEventListener('click', (e) => {
-                    e.preventDefault();
+                if (planAreaCreated === false) {
+                    planArea.insertAdjacentHTML('afterbegin', formHTML)
+                    let submitPlanButton = document.querySelector('#submitPlanButton')
+                    planAreaCreated = true
+                    submitPlanButton.addEventListener('click', (e) => {
+                        e.preventDefault();
 
-                    let steps = document.querySelector('#Steps')
-                    let timeFrame = document.querySelector('#timeFrame')
-                    let idea = document.querySelector('.idea-field')
-                    let plannedIdea = {
-                        idea: idea.innerHTML,
-                        steps: steps.value,
-                        timeFrame: timeFrame.value,
-                    }
-                    plannedItems.push(plannedIdea);
-        // Area to update planned list
-                    buildPlannedList(plannedItems);
-                    planArea.innerHTML = 'Idea saved!'
-                    getNewIdea();
-                    planAreaCreated = false
-                })
+                        let steps = document.querySelector('#Steps')
+                        let timeFrame = document.querySelector('#timeFrame')
+                        let idea = document.querySelector('.idea-field')
+                        let plannedIdea = {
+                            idea: idea.innerHTML,
+                            steps: steps.value,
+                            timeFrame: timeFrame.value,
+                        }
+                        plannedItems.push(plannedIdea);
+                        // Area to update planned list
+                        buildPlannedList(plannedItems);
+                        planArea.innerHTML = 'Idea saved!'
+                        getNewIdea();
+                        planAreaCreated = false
+                    })
                     console.log(plannedItems)
-            }});
+                }
+            });
 
             quickSaveBtn.addEventListener('click', (e) => {
 
