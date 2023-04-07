@@ -67,8 +67,8 @@ const suggestionHTML = `
 <div class="api-div">
     <h class="idea-field">Loading something brilliant...</h>
     <nav class="decision-buttons">
-        <button id="like-button">User likes</button>
-        <button id="dislike-button">User declines</button>
+        <button id="like-button">Oh yeah, I like this idea</button>
+        <button id="dislike-button">No, I don't like this idea!</button>
     </nav>
 </div>`
 
@@ -80,7 +80,7 @@ const formHTML = `
     <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
 </div>
 <div class="timeFrameContainer">
-    <label for="timeFrame">Whats the time frame that you wants things to happen.</label>
+    <label for="timeFrame">What's the time frame that you wants things to happen?</label>
 
     <select name="timeFrame" id="timeFrame">
         <option value="1-3months">1-3 months</option>
@@ -101,11 +101,12 @@ welcomeBtn.addEventListener('click', (e) => {
 
     mainArea.insertAdjacentHTML('afterbegin',
         `<article class="welcome-content">
-    <h>Welcome to Kick-it!</h>
+    <h>Welcome to Buck-iT!</h>
 
-    <p>Here's how to use your new Buck-It! list planner:</p>
-    <p>This is an easy way to help you come up with great ideas for fun and exciting things to before you...ya know....kick the bucket!  Click on the ____button to generate a idea.  If your don't like the idea, you can "Can-it!", if you love the idea you can "Plan-it!".  This app will aid you in your planning process, from setting your time frame, budgeting, list which friend to bring alone (or which ones to leave behide!)</p>
-    <button id="start-button">Got it, let's get started</button>
+    <p>Here's how to use your new Buck-It list planner:</p>
+    <p>This is an easy way to help you come up with great ideas for fun & exciting things to before you...ya know....kick the bucket!  Click on the "Click the Buck-iT!" button to generate an idea.  If you don't like the idea, select "No, I don't like this idea!", and a new one will generate. If you like the idea you can "Oh yeah, I like this idea!".  This app will aid you in your planning process, from setting your time frame, budgeting, list which friend to bring along (or which ones to leave behide!)</p>
+
+    <button id="start-button">Got it!, let's get started</button>
     </article>`);
 
     let startBtn = document.querySelector('#start-button');
