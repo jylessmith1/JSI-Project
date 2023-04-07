@@ -117,6 +117,7 @@ footer{
 }
 
 #title{
+
     font-size: 50px;
     margin: 0%;
     text-shadow: 1px 1px 1px blue;
@@ -132,7 +133,6 @@ footer{
 #welcome-button {
     font-family: 'Indie Flower', cursive;
     font-size: 25px;
-    font
     margin: 15px;
     border: transparent;
     text-shadow: 1px 1px 1px grey;
@@ -367,9 +367,6 @@ textarea {
     height: auto;
     padding-right: 2rem;
 }
-
-
-
 
 
 
