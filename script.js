@@ -33,7 +33,7 @@ let addPlan = (element) => {
     plannedItems.push(plannedIdea);
     buildPlannedList(plannedItems);
     console.log(plannedItems)
-    planArea.innerHTML = 'Idea Saved!';
+    planArea.innerHTML = '';
 })
 };
 
@@ -67,8 +67,8 @@ const suggestionHTML = `
 <div class="api-div">
     <h class="idea-field">Loading something brilliant...</h>
     <nav class="decision-buttons">
-        <button id="like-button">Oh yeah, I like this idea</button>
-        <button id="dislike-button">No, I don't like this idea!</button>
+    <button id="dislike-button">Nah, can't dit it</button>
+        <button id="like-button">Oh yeah, I like it</button>
     </nav>
 </div>`
 
@@ -77,10 +77,10 @@ const formHTML = `
 
 <div class="stepsContainer">
     <label for="Steps">What steps can you take to make it happen?</label>
-    <textarea name="Steps" id="Steps" cols="30" rows="10"></textarea>
+    <textarea name="Steps" id="Steps" cols="35" rows="5"></textarea>
 </div>
 <div class="timeFrameContainer">
-    <label for="timeFrame">What's the time frame that you wants things to happen?</label>
+    <label for="timeFrame">Set a time frame: </label>
 
     <select name="timeFrame" id="timeFrame">
         <option value="1-3months">1-3 months</option>
@@ -89,7 +89,7 @@ const formHTML = `
         <option value="1+years">1+ years</option>
     </select>
 </div>
-<div class="">
+<div class="plan-button-div">
    <button type="submit" id="submitPlanButton">Submit Plan</button>
 </div>
 </section>`
@@ -103,10 +103,10 @@ welcomeBtn.addEventListener('click', (e) => {
         `<article class="welcome-content">
     <h>Welcome to Buck-iT!</h>
 
-    <p>Here's how to use your new Buck-It list planner:</p>
-    <p>This is an easy way to help you come up with great ideas for fun & exciting things to before you...ya know....kick the bucket!  Click on the "Click the Buck-iT!" button to generate an idea.  If you don't like the idea, select "No, I don't like this idea!", and a new one will generate. If you like the idea you can "Oh yeah, I like this idea!".  This app will aid you in your planning process, from setting your time frame, budgeting, list which friend to bring along (or which ones to leave behide!)</p>
+    <p>Here's how to use your new Buck-It! list planner:</p>
+    <p>This is an easy way to help you come up with great ideas for fun and exciting things to before you...ya know....kick the bucket! <br> Buck-iT will give you an idea, if you don't like it, "Can-it"!. If you love it, "Plan-it"! On the fence? "Save-it" and plan later. <br> Jot down ideas and plan out your next fun idea. Buck-iT, before you "kick it"!</p>
+    <button id="start-button">Got it, let's get started</button>
 
-    <button id="start-button">Got it!, let's get started</button>
     </article>`);
 
     let startBtn = document.querySelector('#start-button');
@@ -197,7 +197,7 @@ welcomeBtn.addEventListener('click', (e) => {
                     plannedItems.push(plannedIdea);
         // Area to update planned list
                     buildPlannedList(plannedItems);
-                    planArea.innerHTML = 'Idea saved!'
+                    planArea.innerHTML = ''
                     getNewIdea();
                     planAreaCreated = false
                 })
