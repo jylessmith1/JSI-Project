@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,36 +10,33 @@
 </head>
 
 <body>
-    <section class="cardList">
-        <h1>The Buck-It Kids</h1>
-
-        <div class="card">
-            <img src="" alt="" style="width:100%">
-            <div class="container">
-                <h4><b>Ian Philsbury</b></h4>
-                <p>Web Developer/Coder</p>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <img src="" alt="" style="width:100%">
-            <div class="container">
-                <h4><b>Shineka Solomon</b></h4>
-                <p>Web Developer/Coder</p>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <img src="" alt="" style="width:100%">
-            <div class="container">
-                <h4><b>Jyles Smith</b></h4>
-                <p>Web Developer/Coder</p>
-            </div>
-            <!-- add btton to take the user back to main page -->
-        </div>
-    </section>
+    <div class="card">
+		<img src="../site-pics/image (1).png" alt="Placeholder Image">
+		<div class="info">
+			<h2>Ian Pilsbury</h2>
+			<p>Email: </p>
+			<p>Phone: 123-456-7890</p>
+		</div>
+	</div>
+    <div class="card">
+		<img src="../site-pics/woman_business.webp" alt="Placeholder Image">
+		<div class="info">
+			<h2>Shenika Solomon</h2>
+			<p>Email: </p>
+			<p>Phone: 123-456-7890</p>
+		</div>
+	</div>
+    <div class="card">
+		<img src="../site-pics/businessman-avatar-cartoon-profile-black-260nw-1148034419.webp" alt="Placeholder Image">
+		<div class="info">
+			<h2>Jyles Smith</h2>
+			<p>Email: </p>
+			<p>Phone: 123-456-7890</p>
+		</div>
+	</div>
+    <form>
+        <input type="button" id="aboutButton" value="Go back!" onclick="history.back()">
+    </form>
 </body>
 
 </html>
