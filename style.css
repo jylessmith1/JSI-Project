@@ -78,6 +78,8 @@ footer{
 
 #title{
     margin-bottom: 10px;
+    font-size: 48px;
+    font
 }
 
 .title-space{
@@ -87,7 +89,6 @@ footer{
 #welcome-button {
     font-family: 'Indie Flower', cursive;
     font-size: 25px;
-    font
     margin: 15px;
 }
 
@@ -220,9 +221,6 @@ textarea {
     width: 50%;
     height: auto;
 }
-
-
-
 
 
 
