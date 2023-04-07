@@ -12,7 +12,7 @@ body{
     gap: 15px;
     width: 95%;
     background-color: rgb(211, 169, 14);
-    background: linear-gradient(#FBB333, #FFD014,#F19600 );
+    background: linear-gradient(#fb9a33, #FFD014,#F19600 );
 }
 
 
@@ -43,14 +43,12 @@ header{
     flex-direction: column;
     justify-content: center;
     /* border: 2px solid black; */
-    gap: 10px;
+    /* gap: 10px; */
     font-family: 'Indie Flower', cursive;
     font-size: larger;
-    animation-timing-function: steps(7s);
-
-        
-    
 }
+
+
 
 main{
     display: flex;
@@ -63,9 +61,11 @@ main{
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 80vh; 
+
+    justify-content: center;
+    height: 90vh; 
     width: 99%;
+
 }
 
 footer{
@@ -85,7 +85,9 @@ footer{
 }
 
 #welcome-button {
+    font-family: 'Indie Flower', cursive;
     font-size: 25px;
+    font
     margin: 15px;
 }
 
@@ -94,7 +96,11 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid grey;
+    border: 1px solid rgba(228, 193, 137, 0.302);
+    background-color: #e8d2a7aa;
+    border-radius: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
     max-width: 95%;
     margin: 10px;
     padding:1rem;
