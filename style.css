@@ -1,20 +1,54 @@
-@media only screen and (min-width: 460px) {
+@media only screen and (min-width: 460px){
     body{
-        width: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+    }
+    html section{
+        width: 70%;
+    }
+    header{
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer{
+        width:90%;
+    }
+    .footerSection{
+        display: flex;
+        justify-content:flex-start
     }
 }
 
 
 body{
+    transition: all 1s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
     width: 95%;
-    background-color: rgb(85, 84, 81);
-    background: linear-gradient(#FBB335, #FFD014,#F19600 );
+
+    background-color: rgb(211, 169, 14);
+
+    background: linear-gradient(#fb9a33, #FFD014,#F19600 );
+
 }
 
+.topHeadButtons button{
+    margin: 5px;
+    padding: 7px;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.64);
+}
 
 .background-image {
     background-image: url('site-pics/istockphoto-bucket list 1.jpeg');
@@ -43,14 +77,12 @@ header{
     flex-direction: column;
     justify-content: center;
     /* border: 2px solid black; */
-    gap: 10px;
+    /* gap: 10px; */
     font-family: 'Indie Flower', cursive;
     font-size: larger;
-    animation-timing-function: steps(7s);
-
-        
-    
 }
+
+
 
 main{
     display: flex;
@@ -59,13 +91,14 @@ main{
     gap: 10px;
     background-image: url('site-pics/istockphoto-bucket list 1.jpeg');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 80vh; 
     width: 99%;
+
 }
 
 footer{
@@ -76,17 +109,37 @@ footer{
     height: 1.5rem;
 }
 
+.footerSection button{
+    padding: 7px;
+    margin: 15px;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.64);
+}
+
 #title{
-    margin-bottom: 10px;
+
+    font-size: 50px;
+    margin: 0%;
+    text-shadow: 1px 1px 1px blue;
 }
 
 .title-space{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #welcome-button {
+    font-family: 'Indie Flower', cursive;
     font-size: 25px;
     margin: 15px;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.64);
 }
 
 .welcome-content{
@@ -94,6 +147,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     border: 1px solid rgba(228, 193, 137, 0.302);
     background-color: #e8d2a7aa;
     border-radius: 35%;
@@ -103,13 +157,13 @@ footer{
     margin: 10px;
     padding:1rem;
     text-align: center;
-    /* border-radius: 8px; */
+
 }
 
 
 .main-area{
     width: 95%;
-    height: 95%;
+    transition: all .5s;
 }
 
 .api-div{
@@ -117,35 +171,56 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border:2px solid green;
-    height: 6rem;
+    background-color: rgba(255, 255, 255, 0.468);
+    box-shadow: inset 2px 1px 3px 3px rgba(255, 255, 255, 0.237);
+    border-radius: 8px;
+    height: auto;
     padding:1%;
     margin:1%;
 }
 
 .idea-field{
     background-color: beige;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     padding:1%;
     width: 75%;
     text-align: center;
+    font-size: x-large;
 }
 .decision-buttons{
     display: flex;
     justify-content: space-around;
-    border: 2px dotted yellow;
+    margin-top: 2.5%;
     width: 95%;
     height: 2rem;
     padding:1%;
 }
 
 #like-button{
+
     width: auto;
     height: 100%;
-    padding:1%;
+    padding:2%;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.673);
+    background: linear-gradient(to left, whitesmoke 35%, black 65%) right;
+    background-size: 300% 100%;
+    font-size: large;
 }
+
 #dislike-button{
     width: auto;
     height: 100%;
+    padding: 2%;
+    border: transparent;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px grey;
+    border-bottom-right-radius: 8px;
+    background-color: rgba(44, 44, 44, 0.679);
+    font-size: large;
 }
 .bucket-buttons{
     display: flex;
@@ -153,9 +228,53 @@ footer{
     width: 100%;
 }
 
+#plan-it{
+    width: auto;
+    height: 100%;
+    padding:2%;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.89);
+    font-size: large;
+}
+#save-it{
+    width: auto;
+    height: 100%;
+    padding:2%;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    background-color: rgba(255, 255, 255, 0.89);
+    font-size: large;
+}
+
+#can-it{
+    width: auto;
+    height: 100%;
+    padding:2%;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-bottom-right-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.89);
+    font-size: large;
+}
+
+
 /* This class is used to hide elements as the app progresses */
 .hide{
     display: none;
+}
+
+.plan-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(53, 53, 53, 0.468);
+    box-shadow: inset 2px 1px 3px 3px rgba(255, 255, 255, 0.237);
+    border-radius: 8px;    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding:1%;
+    width: 85%;
+
 }
 
 .second-body {
@@ -176,8 +295,6 @@ button {
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-around;
-   
-  
 }
 .topHeadButtons {
     display: flex;
@@ -189,27 +306,59 @@ textarea {
     size-adjust: auto;
 }
 
+.stepsContainer{
+    padding:5px;
 
-.bucketContainer{
-    margin-bottom: 15%;
 }
-.stepsContainer{}
+.stepsContainer label{
+    width:80%;
+    padding:1%;
+    border-radius: 5px;
+    background-color: beige;
+}
+
+
 .timeFrameContainer{
     display: flex;
+    justify-content: space-around;
     }
+.timeFrameContainer{
+    width: auto;
+    padding:1%;
+    border-radius: 5px;
+    background-color: beige;}
 
 .plan-area{
     width: 100%;
-    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
 }
 
+.plan-button-div{
+    display: flex;
+    justify-content: center;
+}
+
+#submitPlanButton{
+    font-size: 25px;
+    margin: 15px;
+    border: transparent;
+    text-shadow: 1px 1px 1px grey;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.863);
+    text-shadow: 1px 1px .5px blue;
+}
 
 .bucketContainer {
-    /* border: 2px solid black; */
+    background-color: rgba(255, 255, 255, 0.468);
+    box-shadow: inset 2px 1px 3px 3px rgba(255, 255, 255, 0.237);
+    border-radius: 8px;
     gap: 10px;
     display: flex;
     flex-direction: row;
     height: auto;
+    width: 100%;
+    margin:15%;
 };
 .plannedList{
     width: 50%;
@@ -218,10 +367,8 @@ textarea {
 .unplannedList{
     width: 50%;
     height: auto;
+    padding-right: 2rem;
 }
-
-
-
 
 
 
